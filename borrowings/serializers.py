@@ -1,4 +1,7 @@
+from datetime import date
+
 from rest_framework import serializers
+
 from borrowings.models import Borrowing
 
 
@@ -19,8 +22,13 @@ class BorrowingReturnSerializer(serializers.ModelSerializer):
         model = Borrowing
         fields = ["actual_return_date"]
 
+    def validate(self, data):
+        if self.instance.actual_return_date is not None:
+            raise serializers.ValidationError("This book has already been returned.")
+        return data
+
     def update(self, instance, validated_data):
-        instance.actual_return_date = validated_data["actual_return_date"]
+        instance.actual_return_date = validated_data.get("actual_return_date", date.today())
         instance.book.return_book()
         instance.save()
         return instance

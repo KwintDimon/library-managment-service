@@ -1,8 +1,25 @@
 from rest_framework import generics, permissions
+
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiTypes
+
 from borrowings.models import Borrowing
 from borrowings.serializers import BorrowingSerializer, BorrowingReturnSerializer
 
 
+@extend_schema(
+    parameters=[
+        OpenApiParameter(
+            "user_id",
+            type=OpenApiTypes.INT,
+            description="Filter by user ID (ex. ?user_id=1)"
+        ),
+        OpenApiParameter(
+            "is_active",
+            type=OpenApiTypes.STR,
+            description="Filter by active borrowings (ex. ?is_active=true or ?is_active=false)"
+        ),
+    ]
+)
 class BorrowingListCreateView(generics.ListCreateAPIView):
     queryset = Borrowing.objects.all()
     serializer_class = BorrowingSerializer
