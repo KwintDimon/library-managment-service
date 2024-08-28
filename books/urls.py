@@ -1,4 +1,5 @@
 from django.urls import path
+
 from books.views import BookListCreateView, BookDetailView
 
 app_name = "books"

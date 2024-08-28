@@ -3,7 +3,10 @@ from rest_framework import generics, permissions
 from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiTypes
 
 from borrowings.models import Borrowing
-from borrowings.serializers import BorrowingSerializer, BorrowingReturnSerializer
+from borrowings.serializers import (
+    BorrowingSerializer,
+    BorrowingReturnSerializer
+)
 
 
 @extend_schema(

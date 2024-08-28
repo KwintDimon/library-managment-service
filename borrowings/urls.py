@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import BorrowingListCreateView, BorrowingDetailView, BorrowingReturnView
+
+from borrowings.views import (
+    BorrowingListCreateView,
+    BorrowingDetailView,
+    BorrowingReturnView
+)
 
 app_name = "borrowing"
 
