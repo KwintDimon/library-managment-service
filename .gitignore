@@ -52,6 +52,7 @@ dist/
 .pyre/
 .pytype/
 cython_debug/
+htmlcov
 
 # Other specific to your project
 # Add any other directories or files that are specific to your project
