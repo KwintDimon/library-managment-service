@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_spectacular",
     "rest_framework_swagger",
+    "django_extensions",
     "users",
     "books",
     "borrowings"
