@@ -1,0 +1,58 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+env.bak/
+venv.bak/
+
+# IDE/Editor settings
+.idea/
+.vscode/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django specific
+db.sqlite3
+db.sqlite3-journal
+media/
+local_settings.py
+
+# Logs and debug output
+*.log
+
+# Static files
+# <django-project-name>/staticfiles/
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.pytest_cache/
+.tox/
+.nox/
+.cache
+
+# MyPy, Pyright, Ruff, etc.
+.mypy_cache/
+.pyrightconfig.json
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.spec
+
+# Pyre, Pytype, Cython debug symbols
+.pyre/
+.pytype/
+cython_debug/
+htmlcov
+
+# Other specific to your project
+# Add any other directories or files that are specific to your project
